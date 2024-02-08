@@ -1,0 +1,32 @@
+:root{
+    --black: #000000;
+    --eerie-black: #1E1E15;
+    --raisin-black: #362B2C;
+    --night: #001209;
+    --gray-light: #818080e8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: var(--gray-light);
+    height: 50px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.ticket-card {
+    margin: 0 20px;
+    padding: 15px;
+    width: 400px;
+    text-align: start;
+}
+
+
