@@ -9,22 +9,25 @@
 <body>
     <main>
         <div class="card--container"> 
-            <div class="card--login">
+            <form class="card--login" id="loginForm">
                 <h1>Inicio de sesión</h1>
                 <div class="input-user">
-                    <p>Correo electronico</p>
-                    <input type="email" name="email" id="email">
+                    <p form="email">Correo electronico</p>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-password">
-                    <p>Contraseña</p>
-                    <input type="password" name="password" id="password">
+                    <p form="password">Contraseña</p>
+                    <input type="password" name="password" id="password" required>
                 </div>
                 <div class="button-login">
-                    <button type="button">Ingresar</button>
+                    <button type="submit">Ingresar</button>
                 </div>
-            </div>
+            </form>
+            <div id="card--message"></div>
         </div>
     </main>
+
+
 </body>
     <script src="./scripts/login.js"></script>
 </html>
