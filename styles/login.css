@@ -83,3 +83,16 @@ main{
 .card--login input:focus{
     outline: 1px solid var(--gray-modifi);
 }
+
+
+
+#text--message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    position: relative;
+    bottom: 120px;
+    color: red;
+    text-decoration: underline;
+}

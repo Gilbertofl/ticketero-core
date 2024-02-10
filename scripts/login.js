@@ -1,4 +1,4 @@
-//array de datios provisional en lo que se genera una api de conexion
+//array de datos provisional en lo que se genera una api de conexion
 const users = [
     {email: 'example1@live.com',
     password: '12345'},
@@ -30,6 +30,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if(validationLogIn(email, password)) {
         window.location.assign('../views/index.html')
     } else{
-        document.getElementById('card--message').innerText = 'Credenciales incorrectas';
+        document.getElementById('text--message').innerText = '*Credenciales incorrectas*';
     }
 });
