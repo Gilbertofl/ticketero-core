@@ -11,72 +11,7 @@ ticketList.push({
     owner: 'Sponder',
     id: 'baja' /* verde */
 });
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'media' /* amarillo */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'alta' /* rojo*/
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'alta' /* rojo*/
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'alta' /* rojo*/
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'alta' /* rojo*/
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'baja' /* verde */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'baja' /* verde */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'media' /* amarillo */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'media' /* amarillo */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'media' /* amarillo */
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 'media' /* amarillo */
-});
+
 
 
 
