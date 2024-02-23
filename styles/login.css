@@ -77,8 +77,22 @@ main{
     border: 1px solid var(--light-cyan);
     box-shadow: -3px 3px 4px rgba(0, 150, 199, 0.5);
     font-size: 25px;
+    cursor: pointer;
 }
 
 .card--login input:focus{
     outline: 1px solid var(--gray-modifi);
+}
+
+
+
+#text--message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    position: relative;
+    bottom: 120px;
+    color: red;
+    text-decoration: underline;
 }

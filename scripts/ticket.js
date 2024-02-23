@@ -4,27 +4,15 @@ const cardsContainer = document.querySelector('.cards-container');
 
 const ticketList = [];
 
+
 ticketList.push({
     name: 'item de prueba',
     description: "texto de prueba",
     owner: 'Sponder',
+    id: 'baja' /* verde */
 });
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-});
-ticketList.push({
-    name: 'item de prueba',
-    description: "texto de prueba",
-    owner: 'Sponder',
-    id: 1 /* rojo*/
-});
+
+
 
 
 //Encapsulamiento de datos para la funcion de maquetado
@@ -42,15 +30,40 @@ function renderTicket(arr) {
         ticketDescp.classList.add('card-text');
         ticketDescp.innerText = 'Descripcion: ' + ticket.description;
 
+        const ticketPriority = document.createElement('p');
+        ticketPriority.classList.add('ticketPriority');
+        ticketPriority.innerText = 'Prioridad: ' + ticket.id;
+
         const ticketOwner = document.createElement('p');
         ticketOwner.innerText = 'Presentado por: ' + ticket.owner;
 
+        const ticketButton = document.createElement('button');
+        ticketButton.classList.add('button-descrip');
+        ticketButton.innerText = 'Modificar';
 
-
+        //validacion de prioridad de datos
+        switch (ticket.id) {
+            case 'baja': 
+                ticketCard.classList.add('bajo');
+                ticketPriority.classList.add('bajo');
+                break;
+            case 'media':
+                ticketCard.classList.add('medio');
+                ticketPriority.classList.add('medio');
+                break;
+            case 'alta':
+                ticketCard.classList.add('alto');
+                ticketPriority.classList.add('alto');
+                break;
+            default:
+                console.log("Error: no valida");
+                break;
+        }
+ 
         //maquetacion
         cardsContainer.appendChild(ticketCard);
 
-        ticketCard.append(ticketTitle, ticketDescp, ticketOwner);
+        ticketCard.append(ticketTitle, ticketDescp, ticketPriority, ticketOwner, ticketButton);
 
     }
 }
