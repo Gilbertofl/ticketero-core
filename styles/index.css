@@ -96,7 +96,7 @@ h1{
 
 .ticket-card .button-descrip {
     background: var(--light-cyan-vanished);
-    border: 1px solid var(--vanished-black);
+    border-color:  var(--vanished-black);
     width: 90px;
     border-radius: 8px;
 }
@@ -107,7 +107,7 @@ h1{
     position: fixed;
     bottom: 25px;
     right: 45px;
-    border: 1px solid var(--vanished-black);
+    border-color: var(--vanished-black);
     background: var(--light-cyan-vanished);
     border-radius: 10px;
     display: flex;

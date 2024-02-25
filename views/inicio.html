@@ -10,7 +10,6 @@
 </head>
 <body>
     <header>
-        <!-- Este sera le navbar pero se checara que se le agregara luego -->
         <nav>
             <div class="navbar-left">
                 <img src="" alt="Logo de la empresa">
@@ -31,18 +30,38 @@
                 <!-- Maquetacion por medio de script JS -->
             </div>
 
+            <section class="container-modal">
+                <div id="modalEdit" class="modal">
+                    <div class="modal-content">
+                        <h2>Editar Ticket</h2>
+                        <div id="editFormContainer"></div>
+                        
+                    </div>
+                    <div class="button-containerEdit">
+                        <button class="close">Cerrar</button>
+                        <button id="updateButton">Actualizar</button>
+                    </div>
+                </div>
+            </section>
+
         </section>
 
-        <div class="newPetition" type="button">
+        <button class="newPetition" type="button">
             <img src="../assets/add.png">
             Nueva petición 
-        </div>
+        </button>
 
         <section class="container-modal">
             <div id="myModal" class="myModal">
                 <div class="modal-C">
-                    <span class="close">&times;</span>
-                    <p>Aqui es pura cosas para modal.</p>
+                    <h2>Crear Ticket</h2>
+                    <div id="formContainerNew">
+                        <!--Maquetacion de modalCreate en js-->
+                    </div>
+                    <div class="button-container">
+                        <button id="cancelButton">Cancelar</button>
+                        <button id="submitButton">Enviar</button>
+                    </div>
                 </div>
                 </div>
         </section>
@@ -54,6 +73,7 @@
         
     <footer></footer>    
 </body>
-    <script src="../scripts/ticket.js"></script>
-    <script src="../scripts/modal.js"></script>
+    <script type="module" src="../scripts/tickets.js"></script>
+    <script src="../scripts/modalCreate.js"></script>
+    <script type="module" src="../scripts/modalEdit.js"></script>
 </html>
