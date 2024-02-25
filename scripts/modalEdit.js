@@ -30,9 +30,9 @@ modalEdit.addEventListener('click', function(event) {
     }
 });
 
-// Función para actualizar el ticket (puedes modificar según sea necesario)
+// Función para actualizar el ticket 
 function updateTicket() {
-    // Aquí puedes agregar la lógica para actualizar el ticket
+
     console.log('Ticket actualizado');
     modalEdit.style.display = 'none';
 }

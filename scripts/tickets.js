@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para renderizar los tickets
     function renderTickets(ticketList) {
-        cardsContainer.innerHTML = ''; // Limpiar el contenedor
+        cardsContainer.innerHTML = ''; 
 
         ticketList.forEach(ticket => {
             const ticketCard = createTicketCard(ticket);
@@ -74,6 +74,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Renderizar los tickets al cargar la página
     renderTickets(ticketList);
 });
