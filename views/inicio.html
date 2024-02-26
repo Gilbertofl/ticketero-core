@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,14 @@
                 <img src="" alt="Logo de la empresa">
             </div>
             <div class="navbar-right">
-                <p>user@example.com</p>
+                <p class="user-email"></p>
                 <img class="notification" src="../assets/notification.png" alt="logo de notificaciones">
-                <img class="user-photo" src="../assets/gege gato gojo.jpeg" alt="logo de usuario">
+                <div class="dropdown">
+                    <img class="user-photo" src="../assets/gege gato gojo.jpeg" alt="logo de usuario" onclick="toggleDropdown()">
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a onclick="logout()">Cerrar sesión</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -31,19 +36,20 @@
             </div>
 
             <section class="container-modal">
-                <div id="modalEdit" class="modal">
-                    <div class="modal-content">
+                <div id="modalEdit" class="myModal">
+                    <div class="modal-C">
                         <h2>Editar Ticket</h2>
-                        <div id="editFormContainer"></div>
-                        
+                        <div id="editFormContainer">
+
+                        </div>
+                        <div class="button-containerEdit">
+                            <button class="close">Cerrar</button>
+                            <button id="updateButton">Actualizar</button>
+                        </div>
                     </div>
-                    <div class="button-containerEdit">
-                        <button class="close">Cerrar</button>
-                        <button id="updateButton">Actualizar</button>
-                    </div>
+                    
                 </div>
             </section>
-
         </section>
 
         <button class="newPetition" type="button">
@@ -74,6 +80,8 @@
     <footer></footer>    
 </body>
     <script type="module" src="../scripts/tickets.js"></script>
-    <script src="../scripts/modalCreate.js"></script>
     <script type="module" src="../scripts/modalEdit.js"></script>
+    <script src="../scripts/modalCreate.js"></script>
+    <script src="../scripts/basic.js"></script>
+
 </html>

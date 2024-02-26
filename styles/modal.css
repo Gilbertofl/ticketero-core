@@ -2,6 +2,7 @@
     --gray-modifi: rgba(00, 00, 00, 65%);
 }
 
+/*Modal estilos basicos*/
 .container-modal {
     display: flex;
     justify-content: center;
@@ -31,6 +32,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+/*Estilos de modal creado*/
 #formContainerNew #myForm{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -160,7 +163,40 @@
 }
 
 
-.button-container{
+/*Estilos de modal editable*/
+#editFormContainer #formEdit{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#formContainerNew p{
+    margin: 0;
+}
+
+#formEdit .form-title{
+   grid-column: 1 / span 2;
+}
+
+#formEdit .form-descrip{
+    grid-row: 2 / span 3;
+}
+
+#formEdit .form-priority{
+    grid-column: 2 / 2;
+    grid-row: 2 / 3;
+}
+
+#formEdit .form-date{
+    grid-column: 2 / 2;
+    grid-row: 3 / 4;
+}
+
+#formEdit .form-owner{
+    grid-column: 1 / span 2;
+}
+
+.button-container, .button-containerEdit{
     display: flex;
     justify-content: flex-end;
     margin-top: 15px;
@@ -173,6 +209,21 @@
 
 .button-container #cancelButton{
     margin-right: 15px;
+    border-radius: 6px;
+    border-color: var(--gray-modifi);
+}
+
+
+#editFormContainer p{
+    margin: 0;
+}
+
+.button-containerEdit .close{
+    margin-right: 15px;
+    border-radius: 6px;
+    border-color: var(--gray-modifi);
+}
+.button-containerEdit #updateButton{
     border-radius: 6px;
     border-color: var(--gray-modifi);
 }

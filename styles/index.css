@@ -119,3 +119,21 @@ h1{
     height: 25px;
     object-fit: cover;
 }
+
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    background-color: whitesmoke;
+    transition: all 1s linear;
+}
+
+.dropdown-content.show {
+    display: block;
+   
+}

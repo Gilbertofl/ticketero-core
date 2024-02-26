@@ -1,15 +1,5 @@
 //array de datos provisional en lo que se genera una api de conexion
-const users = [
-    {email: 'example1@live.com',
-    password: '12345',
-    id: 1},
-    {email: 'example2@live.com',
-    password: '5263',
-    id: 2},
-    {email: 'example3@live.com',
-    password: '5869',
-    id: 3}, //Error para id y salir a un area de 404 
-];
+import { users } from './api.js';
 
 //funcion de validacion de datos 
 function validationLogIn(email, password) {
@@ -30,10 +20,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('password').value;
 
     //validacion para correcion de datos o para redireccionamiento
-    const userId = validationLogIn(email, password);
+    // const userId = validationLogIn(email, password);
+    const user = users.find(user => user.email === email && user.password === password);
 
-    if(userId) {
-        switch(userId) {
+    if(user) {
+
+        localStorage.setItem('userEmail_' + user.id, user.email);
+        localStorage.setItem('userId', user.id)
+
+        switch(user.id) {
             case 1: 
                 window.location.assign('../views/inicio.html');
                 break;
