@@ -1,4 +1,5 @@
 //Funcion de modal -> genera el modal al clickear el boton
+import { ticketList } from "./api.js";
 
 const btnNew = document.querySelector('.newPetition');
 const modalNew = document.getElementById('myModal');
@@ -43,7 +44,6 @@ function generateFormNew() {
     descripLabel.textContent = 'Descripcion: ';
 
     const descripInput = document.createElement('textarea');
-    descripInput.type = 'text';
     descripInput.id = 'form-Descrip';
     descripInput.name = 'form-Descrip';
     descripInput.placeholder = 'Ejemplo: lleva demasiado tiempo en espera';
@@ -122,7 +122,24 @@ window.addEventListener('DOMContentLoaded', generateFormNew);
 
 //funcion de envio y cancelado de tickets
 
+
 function submitForm() {
+
+    const name = document.getElementById('form-Title').value;
+    const description = document.getElementById('form-Descrip').value;
+    const priority = document.getElementById('priorityType').value;
+    const date = document.getElementById('date').value;
+    const owner = document.getElementById('owner').value;
+
+    ticketList.push({
+        name: name,
+        description: description,
+        priority: priority,
+        date: date,
+        owner: owner
+    });
+    console.log('ticketList actualizado:', ticketList);
+
     console.log('Formulario enviado');
 }
 
