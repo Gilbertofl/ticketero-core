@@ -1,8 +1,18 @@
-import { ticketList } from "./api.js";
 import { openEditModal } from './modalEdit.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const cardsContainer = document.querySelector('.cards-container');
+
+    // Hacer una solicitud GET a tu script PHP que devuelve los datos de la base de datos
+    fetch('../temporal/connection.php')
+      .then(response => response.json())
+      .then(data => {
+        // Aquí puedes trabajar con los datos recibidos
+        console.log(data); // Mostrar los datos en la consola, por ejemplo
+
+        renderTickets(data); // Llama a la función para renderizar los tickets con los datos obtenidos
+      })
+      .catch(error => console.error('Error al obtener los datos:', error));
 
     // Función para crear una tarjeta de ticket
     function createTicketCard(ticket) {
@@ -19,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const ticketPriority = document.createElement('p');
         ticketPriority.classList.add('ticketPriority');
-        ticketPriority.innerText = 'Prioridad: ' + ticket.id;
+        ticketPriority.innerText = 'Prioridad: ' + ticket.priority;
 
         const ticketDate = document.createElement('p');
         ticketDate.classList.add('ticketDate');
@@ -40,16 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Validación de prioridad de datos
-        switch (ticket.id) {
-            case 'baja': 
+        switch (ticket.priority) {
+            case 'BAJA': 
                 ticketCard.classList.add('bajo');
                 ticketPriority.classList.add('bajo');
                 break;
-            case 'media':
+            case 'MEDIA':
                 ticketCard.classList.add('medio');
                 ticketPriority.classList.add('medio');
                 break;
-            case 'alta':
+            case 'ALTA':
                 ticketCard.classList.add('alto');
                 ticketPriority.classList.add('alto');
                 break;
@@ -73,6 +83,4 @@ document.addEventListener('DOMContentLoaded', function() {
             cardsContainer.appendChild(ticketCard);
         });
     }
-
-    renderTickets(ticketList);
 });

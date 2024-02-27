@@ -1,5 +1,4 @@
 //Funcion de modal -> genera el modal al clickear el boton
-import { ticketList } from "./api.js";
 
 const btnNew = document.querySelector('.newPetition');
 const modalNew = document.getElementById('myModal');
@@ -122,31 +121,26 @@ window.addEventListener('DOMContentLoaded', generateFormNew);
 
 //funcion de envio y cancelado de tickets
 
-
 function submitForm() {
 
-    const name = document.getElementById('form-Title').value;
-    const description = document.getElementById('form-Descrip').value;
-    const priority = document.getElementById('priorityType').value;
-    const date = document.getElementById('date').value;
-    const owner = document.getElementById('owner').value;
+    const formData = new FormData(document.getElementById('myForm'));
 
-    ticketList.push({
-        name: name,
-        description: description,
-        priority: priority,
-        date: date,
-        owner: owner
-    });
-    console.log('ticketList actualizado:', ticketList);
-
-    console.log('Formulario enviado');
+    fetch('../temporal/conn_into.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Ticket creado:', data);
+        closeModalNew();
+    })
+    .catch(error => console.error('Error al crear el ticket:', error));
 }
 
+//funcion para cerrar el modal de creacion de tickets
 function closeModalNew() {
     console.log('Modal cerrado');
-    let modal = document.getElementById('myModal');
-    modal.style.display = 'none';
+    modalNew.style.display = 'none';
 }
 
 

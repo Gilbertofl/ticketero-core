@@ -1,5 +1,3 @@
-import { ticketList } from "./api.js";
-
 const editFormContainer = document.getElementById('editFormContainer');
 const modalEdit = document.getElementById('modalEdit');
 
@@ -22,9 +20,9 @@ function openEditModal(ticket) {
         <div class="form-priority">
         <p for="priority">Prioridad:</p>
         <select id="priority" name="priority">
-            <option value="optionA" ${ticket.priority === 'optionA' ? 'selected' : ''}>ALTA</option>
-            <option value="optionB" ${ticket.priority === 'optionB' ? 'selected' : ''}>MEDIA</option>
-            <option value="optionC" ${ticket.priority === 'optionC' ? 'selected' : ''}>BAJA</option>
+            <option value="ALTA" ${ticket.priority === 'ALTA' ? 'selected' : ''}>ALTA</option>
+            <option value="MEDIA" ${ticket.priority === 'MEDIA' ? 'selected' : ''}>MEDIA</option>
+            <option value="BAJA" ${ticket.priority === 'BAJA' ? 'selected' : ''}>BAJA</option>
         </select>
         </div>
 
@@ -44,28 +42,39 @@ function openEditModal(ticket) {
     modalEdit.style.display = 'block';
 }
 
-//funcion de ectualización y cancelado de tickets
-
+// Función para actualizar un ticket
 function updateTicket() {
-    console.log('formulario actualizado');
+    const form = document.getElementById('formEdit');
+    const formData = new FormData(form);
+
+    fetch('../temporal/conn_refres.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Ticket actualizado:', data);
+        
+        modalEdit.style.display = 'none';
+    })
+    .catch(error => console.error('Error al actualizar el ticket:', error));
 }
 
+// Función para cancelar la modificación de un ticket
 function cancelTicket(){
-    console.log('Modificacion cancelada');
-    let modalEdit = document.getElementById('modalEdit');
+    console.log('Modificación cancelada');
     modalEdit.style.display = 'none';
 }
 
 const updateButton = document.getElementById('updateButton');
-const cancelUpdate = document.querySelector('.close');
+const cancelButton = document.querySelector('.close');
 
 updateButton.addEventListener('click', function() {
     updateTicket();
 });
 
-cancelUpdate.addEventListener('click', function() {
+cancelButton.addEventListener('click', function() {
     cancelTicket();
 });
 
-//Datos exportado para su modificacion
 export { openEditModal };
