@@ -1,0 +1,23 @@
+{
+  "name": "ticketero-api",
+  "version": "1.0.0",
+  "description": "Backend API Vanilla Node.js + TypeScript + PostgreSQL + Firebase Admin para Ticketero",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "build:web": "tsc -p ../web/tsconfig.json",
+    "watch:web": "tsc -p ../web/tsconfig.json --watch",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

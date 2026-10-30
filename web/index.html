@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Ticketero - Acceso al Portal</title>
+</head>
+<body>
+    <main>
+        <div class="card--container">
+            <div class="login-brand">
+                <span>Ticketero</span>
+            </div>
+            <p class="login-subtitle">Gestión inteligente de incidencias</p>
+
+            <form class="card--login" id="loginForm">
+                <div class="input-user">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" placeholder="usuario@ejemplo.com" required>
+                </div>
+                <div class="input-password">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="••••••••" required>
+                </div>
+                <div class="button-login">
+                    <button type="submit">Ingresar al Portal</button>
+                </div>
+            </form>
+
+            <div id="text--message" role="alert"></div>
+
+            <div class="quick-access">
+                <span class="quick-access-label">Accesos Demo</span>
+                <div class="quick-access-chips">
+                    <button type="button" class="chip-btn" id="demoClientBtn">Cliente Demo</button>
+                    <button type="button" class="chip-btn" id="demoSupportBtn">Soporte Técnico</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./js/auth.js"></script>
+</body>
+</html>

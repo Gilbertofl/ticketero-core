@@ -1,0 +1,28 @@
+# Entorno e infraestructura local
+.env
+.env.*
+node_modules/
+dist/
+skills/
+scratch/
+
+# Credenciales de servicio privadas
+firebase-service-account.json
+*-adminsdk-*.json
+google-services.json
+
+# Flutter y builds móviles
+.dart_tool/
+.pub-cache/
+.pub/
+build/
+**/build/
+.gradle/
+**/.gradle/
+**/android/.gradle/
+**/android/app/build/
+**/android/local.properties
+
+# Archivos subidos por usuarios
+api/uploads/
+uploads/
