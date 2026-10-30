@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,19 @@
 </head>
 <body>
     <header>
-        <!-- Este sera le navbar pero se checara que se le agregara luego -->
         <nav>
             <div class="navbar-left">
                 <img src="" alt="Logo de la empresa">
             </div>
             <div class="navbar-right">
-                <p>user@example.com</p>
-                <img class="notification" src="../assets/notification.png" alt="logo de notificaciones">
-                <img class="user-photo" src="../assets/gege gato gojo.jpeg" alt="logo de usuario">
+                <p class="user-email"></p>
+                <!-- <img class="notification" src="../assets/notification.png" alt="logo de notificaciones"> -->
+                <div class="dropdown">
+                    <img class="user-photo" src="../assets/gege gato gojo.jpeg" alt="logo de usuario" onclick="toggleDropdown()">
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a onclick="logout()">Cerrar sesión</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -31,18 +35,39 @@
                 <!-- Maquetacion por medio de script JS -->
             </div>
 
+            <section class="container-modal">
+                <div id="modalEdit" class="myModal">
+                    <div class="modal-C">
+                        <h2>Editar Ticket</h2>
+                        <div id="editFormContainer">
+
+                        </div>
+                        <div class="button-containerEdit">
+                            <button class="close">Cerrar</button>
+                            <button id="updateButton">Actualizar</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
         </section>
 
-        <div class="newPetition" type="button">
+        <button class="newPetition" type="button">
             <img src="../assets/add.png">
             Nueva petición 
-        </div>
+        </button>
 
         <section class="container-modal">
             <div id="myModal" class="myModal">
                 <div class="modal-C">
-                    <span class="close">&times;</span>
-                    <p>Aqui es pura cosas para modal.</p>
+                    <h2>Crear Ticket</h2>
+                    <div id="formContainerNew">
+                        <!--Maquetacion de modalCreate en js-->
+                    </div>
+                    <div class="button-container">
+                        <button id="cancelButton">Cancelar</button>
+                        <button id="submitButton">Enviar</button>
+                    </div>
                 </div>
                 </div>
         </section>
@@ -54,6 +79,9 @@
         
     <footer></footer>    
 </body>
-    <script src="../scripts/ticket.js"></script>
-    <script src="../scripts/modal.js"></script>
+    <script type="module" src="../scripts/tickets.js"></script>
+    <script type="module" src="../scripts/modalEdit.js"></script>
+    <script type="module" src="../scripts/modalCreate.js"></script>
+    <script src="../scripts/basic.js"></script>
+
 </html>

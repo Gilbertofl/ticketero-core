@@ -96,7 +96,7 @@ h1{
 
 .ticket-card .button-descrip {
     background: var(--light-cyan-vanished);
-    border: 1px solid var(--vanished-black);
+    border-color:  var(--vanished-black);
     width: 90px;
     border-radius: 8px;
 }
@@ -107,7 +107,7 @@ h1{
     position: fixed;
     bottom: 25px;
     right: 45px;
-    border: 1px solid var(--vanished-black);
+    border-color: var(--vanished-black);
     background: var(--light-cyan-vanished);
     border-radius: 10px;
     display: flex;
@@ -118,4 +118,22 @@ h1{
 .newPetition img{
     height: 25px;
     object-fit: cover;
+}
+
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    background-color: whitesmoke;
+    transition: all 1s linear;
+}
+
+.dropdown-content.show {
+    display: block;
+   
 }
